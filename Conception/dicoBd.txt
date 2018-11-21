@@ -1,0 +1,128 @@
+Dictionnaire de données 
+
+Nom : titre_bd
+Code : TITRE_BD
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : sousTitre_bd
+Code : SOUSTITRE_BD
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : tome_bd
+Code : TOME_BD
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : dateParution_bd
+Code : DATEPARUTION_BD
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : auteur_bd
+Code : AUTEUR_BD
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : image_bd
+Code : IMAGE_BD
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : resume_bd
+Code : RESUME_BD
+Type : TEXT
+Taille : ,
+Commentaire : 
+
+Nom : id_user
+Code : IDUSER
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : pseudo_user
+Code : PSEUDO_USER
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : mail_user
+Code : MAIL_USER
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : id_image
+Code : ID_IMAGE
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : localisation_image
+Code : LOCALISATION_IMAGE
+Type : TEXT
+Taille : 100,
+Commentaire : 
+
+Nom : id_envie
+Code : ID_ENVIE
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : id_user
+Code : ID_USER
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : id_favoris
+Code : ID_FAVORIS
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : id_users
+Code : ID_USERS
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : id_collection
+Code : ID_COLLECTION
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : nom
+Code : NOM
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : id
+Code : ID
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : id_bd
+Code : ID_BD
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : id_bd
+Code : ID_BD
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+

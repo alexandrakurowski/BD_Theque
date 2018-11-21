@@ -1,0 +1,169 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: users
+#------------------------------------------------------------
+
+CREATE TABLE users(
+        id_user     Int  Auto_increment  NOT NULL ,
+        pseudo_user Varchar (100) NOT NULL ,
+        mail_user   Varchar (100) NOT NULL
+	,CONSTRAINT users_PK PRIMARY KEY (id_user)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: envies
+#------------------------------------------------------------
+
+CREATE TABLE envies(
+        id_envie      Int  Auto_increment  NOT NULL ,
+        id_user       Int NOT NULL ,
+        id_bd         Int NOT NULL ,
+        id_user_users Int NOT NULL
+	,CONSTRAINT envies_PK PRIMARY KEY (id_envie)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: collection
+#------------------------------------------------------------
+
+CREATE TABLE collection(
+        id_collection Int  Auto_increment  NOT NULL ,
+        id_user       Int NOT NULL ,
+        nom           Varchar (100) NOT NULL ,
+        id_bd         Int NOT NULL ,
+        id_user_users Int NOT NULL
+	,CONSTRAINT collection_PK PRIMARY KEY (id_collection)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: bd
+#------------------------------------------------------------
+
+CREATE TABLE bd(
+        id_bd           Int  Auto_increment  NOT NULL ,
+        titre_bd        Varchar (100) NOT NULL ,
+        sousTitre_bd    Varchar (100) NOT NULL ,
+        tome_bd         Int NOT NULL ,
+        dateParution_bd Date NOT NULL ,
+        auteur_bd       Varchar (100) NOT NULL ,
+        image_bd        Varchar (100) NOT NULL ,
+        resume_bd       Text NOT NULL ,
+        id_image        Int NOT NULL
+	,CONSTRAINT bd_PK PRIMARY KEY (id_bd)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: image
+#------------------------------------------------------------
+
+CREATE TABLE image(
+        id_image           Int  Auto_increment  NOT NULL ,
+        localisation_image Text NOT NULL ,
+        id_bd              Int NOT NULL ,
+        id_bd_appartenir   Int NOT NULL
+	,CONSTRAINT image_PK PRIMARY KEY (id_image)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: favoris
+#------------------------------------------------------------
+
+CREATE TABLE favoris(
+        id_favoris     Int  Auto_increment  NOT NULL ,
+        id_users       Int NOT NULL ,
+        id_bd          Int NOT NULL ,
+        id_user        Int NOT NULL ,
+        id_bd_contenir Int NOT NULL
+	,CONSTRAINT favoris_PK PRIMARY KEY (id_favoris)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: ajouter
+#------------------------------------------------------------
+
+CREATE TABLE ajouter(
+        id_collection Int NOT NULL ,
+        id_bd         Int NOT NULL
+	,CONSTRAINT ajouter_PK PRIMARY KEY (id_collection,id_bd)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: contenir
+#------------------------------------------------------------
+
+CREATE TABLE contenir(
+        id_envie Int NOT NULL ,
+        id_bd    Int NOT NULL
+	,CONSTRAINT contenir_PK PRIMARY KEY (id_envie,id_bd)
+)ENGINE=InnoDB;
+
+
+
+
+ALTER TABLE envies
+	ADD CONSTRAINT envies_users0_FK
+	FOREIGN KEY (id_user_users)
+	REFERENCES users(id_user);
+
+ALTER TABLE envies 
+	ADD CONSTRAINT envies_users0_AK 
+	UNIQUE (id_user_users);
+
+ALTER TABLE collection
+	ADD CONSTRAINT collection_users0_FK
+	FOREIGN KEY (id_user_users)
+	REFERENCES users(id_user);
+
+ALTER TABLE bd
+	ADD CONSTRAINT bd_image0_FK
+	FOREIGN KEY (id_image)
+	REFERENCES image(id_image);
+
+ALTER TABLE bd 
+	ADD CONSTRAINT bd_image0_AK 
+	UNIQUE (id_image);
+
+ALTER TABLE image
+	ADD CONSTRAINT image_bd0_FK
+	FOREIGN KEY (id_bd_appartenir)
+	REFERENCES bd(id_bd);
+
+ALTER TABLE image 
+	ADD CONSTRAINT image_bd0_AK 
+	UNIQUE (id_bd_appartenir);
+
+ALTER TABLE favoris
+	ADD CONSTRAINT favoris_users0_FK
+	FOREIGN KEY (id_user)
+	REFERENCES users(id_user);
+
+ALTER TABLE favoris
+	ADD CONSTRAINT favoris_bd1_FK
+	FOREIGN KEY (id_bd_contenir)
+	REFERENCES bd(id_bd);
+
+ALTER TABLE ajouter
+	ADD CONSTRAINT ajouter_collection0_FK
+	FOREIGN KEY (id_collection)
+	REFERENCES collection(id_collection);
+
+ALTER TABLE ajouter
+
+
+
+
+	=======================================================================
+	   Désolé, il faut activer cette version pour voir la suite du script ! 
+	=======================================================================
+
