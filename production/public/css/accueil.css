@@ -1,0 +1,42 @@
+
+h1{
+	text-align: center;
+	Font-Weight: Bold;
+	font-size: 100px;
+	/*padding-top: 50px;*/
+}
+
+
+
+body{
+	background-image: url(fond.png);
+	/*background-repeat: no-repeat;*/
+	background-size: cover;
+
+}
+
+h3{
+	
+	padding-top: 50px;
+	margin-left: 20px;
+	Font-Weight: Bold;
+	font-size: 40px;
+	font-style: italic;
+}
+
+img{
+	height: 399px;
+	width: 277px;
+}
+
+.container-fluid{
+	margin-left: 100px;
+}
+
+.sortie{
+	color: brown;
+}
+
+.collec{
+	width: 500px;
+}
