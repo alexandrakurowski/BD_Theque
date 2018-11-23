@@ -13,19 +13,21 @@ class Collection extends Migration
      */
     public function up()
     {
-        shema:create('collection',function(Blueprint $table))
+        schema::create('collection',function(Blueprint $table){
+
             $table->increments('id_collection');
             $table->string('nom_collection');
-            $table->unsignedInteger('fk_users');
-            $table->unsignedInteger('fk_bd');
+            $table->unsignedInteger('id_users');
+            $table->unsignedInteger('id_bd');
 
-            $table->foreign('fk_users')
-                    ->references('id_user')->on(
+            $table->foreign('id_users')
+                    ->references('id')->on(
                         'users')
                     ->onDelete('cascade');
-            $table->foreign('fk_bd')
+            $table->foreign('id_bd')
                     ->references('id_bd')->on('bd')
                     ->onDelete('cascade');
+            });
     }
 
     /**

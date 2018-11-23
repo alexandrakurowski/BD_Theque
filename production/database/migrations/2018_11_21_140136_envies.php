@@ -13,18 +13,20 @@ class Envies extends Migration
      */
     public function up()
     {
-        Shema:create('envies',function(Blueprint $table))
+        Schema::create('envies',function(Blueprint $table){
+
         
             $table->increments('id_envie');
-            $table->unsignedInteger('fk_users');
-            $table->unsignedInteger('fk_bd');
+            $table->unsignedInteger('id_user');
+            $table->unsignedInteger('id_bd');
 
-            $table->foreign('fk_users')
-                    ->references('id_user')->on('users')
+            $table->foreign('id_user')
+                    ->references('id')->on('users')
                     ->onDelete('cascade');
-            $table->foreign('fk_bd')
+            $table->foreign('id_bd')
                     ->references('id_bd')->on('bd')
                     ->onDelete('cascade');
+        });
     }
 
     /**
